@@ -1,0 +1,107 @@
+version: 1
+
+dn: dc=test,dc=com
+objectClass: dcObject
+objectClass: organization
+dc: test
+o: test.com
+
+dn: cn=admin,dc=test,dc=com
+objectClass: organizationalRole
+objectClass: top
+cn: admin
+description: LDAP administrator
+roleOccupant: dc=test,dc=com
+
+dn: ou=People,dc=test,dc=com
+objectClass: top
+objectClass: organizationalUnit
+ou: People
+
+dn: ou=Hosts,dc=test,dc=com
+objectClass: top
+objectClass: organizationalUnit
+ou: Hosts
+
+dn: ou=Sets,dc=test,dc=com
+objectClass: top
+objectClass: organizationalUnit
+ou: Sets
+
+dn: cn=znc,ou=Sets,dc=test,dc=com
+objectClass: groupOfUniqueNames
+objectClass: top
+cn: znc
+uniqueMember: cn=admin,dc=test,dc=com
+
+dn: ou=Groups,dc=test,dc=com
+objectClass: organizationalUnit
+objectClass: top
+ou: Groups
+
+dn: cn=galactica,ou=Hosts,dc=test,dc=com
+objectClass: facterHost
+objectClass: device
+objectClass: top
+cn: galactica
+factFqdn: galactica.test.com
+
+dn: cn=networkEth0,cn=galactica,ou=Hosts,dc=test,dc=com
+objectClass: facterNetwork
+objectClass: top
+cn: networkEth0
+factInterface: eth0
+factIpAddress: 192.168.1.100
+factMacAddress: 11:11:11:11:11:11
+factNetwork: 255.255.255.0
+
+dn: cn=networkLo0,cn=galactica,ou=Hosts,dc=test,dc=com
+objectClass: facterNetwork
+objectClass: top
+cn: networkLo0
+
+dn: cn=odin,ou=Hosts,dc=test,dc=com
+objectClass: facterHost
+objectClass: device
+objectClass: top
+cn: odin
+
+dn: cn=networkEth0,cn=odin,ou=Hosts,dc=test,dc=com
+objectClass: facterNetwork
+objectClass: top
+cn: networkEth0
+
+dn: cn=networkLo0,cn=odin,ou=Hosts,dc=test,dc=com
+objectClass: facterNetwork
+objectClass: top
+cn: networkLo0
+
+dn: cn=networkEth1,cn=odin,ou=Hosts,dc=test,dc=com
+objectClass: facterNetwork
+objectClass: top
+cn: networkEth1
+
+dn: cn=processor0,cn=galactica,ou=Hosts,dc=test,dc=com
+objectClass: device
+objectClass: top
+objectClass: facterProcessor
+cn: processor0
+factProcessorId: 0
+factProcessorInfo: testing
+
+dn: cn=processor0,cn=odin,ou=Hosts,dc=test,dc=com
+objectClass: device
+objectClass: top
+objectClass: facterProcessor
+cn: processor0
+factProcessorId: 0
+factProcessorInfo: testing
+
+dn: cn=processor1,cn=odin,ou=Hosts,dc=test,dc=com
+objectClass: device
+objectClass: top
+objectClass: facterProcessor
+cn: processor1
+factProcessorId: 1
+factProcessorInfo: testing
+
