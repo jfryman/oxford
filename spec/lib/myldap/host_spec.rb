@@ -145,6 +145,11 @@ describe "Interfacing with Host in LDAP" do
       host.set_fact('factFqdn', 'galactica.test.com').should == true
     end
 
+    it 'should gracefully handle an unknown fact' do
+      host = Host.new('galactica')
+      host.set_fact('fqdn', 'galactica.test.com').should == nil
+    end
+
     it 'should be able to tell me all known facts about a system' do
       a = {
         'eth0' => {

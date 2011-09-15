@@ -1,7 +1,4 @@
 require 'lib/myldap'
-require 'lib/myldap/objects/host'
-require 'lib/myldap/objects/network'
-require 'lib/myldap/objects/processor'
 
 class Host < Myldap
   def initialize(host)
@@ -11,11 +8,15 @@ class Host < Myldap
   end
 
   def set_fact(fact, value)
-    if @ldap.__send__(fact) != value
-      @ldap.__send__("#{fact}=", value)
-      @ldap.save
+    begin
+      if @ldap.__send__(fact) != value
+        @ldap.__send__("#{fact}=", value)
+        @ldap.save
+      end
+      true 
+    rescue NoMethodError  # In the event the schema doesn't exist, fail gracefully
+      nil
     end
-    true 
   end
 
   def set_all_facts(values)
