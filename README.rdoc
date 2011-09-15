@@ -1,5 +1,5 @@
 = Overview
-This is the first iteration of facter-ldap. 
+This is the first iteration of oxford, a LDAP bridge between fact generation and LDAP as storage. 
 
 This is a wrapper for polling of facts via the Facter library (http://puppetlabs.com/puppet/related-projects/facter/) and export to LDAP
 
@@ -33,6 +33,8 @@ A: Facter is really good at doing one thing - providing facts.
 
 = Todo
 - Refactor code (potential integration into Facter?)
+- add alternate fact generation tools as options. 
+- update namespace to include name. 
 - Include Puppet custom specific facts when polling for facts.
 - Package into gem
 - Profit?
