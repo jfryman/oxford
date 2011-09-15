@@ -1,5 +1,3 @@
-require 'lib/facts'
-
 describe "Facts" do
   before(:all) do
     @interface = Facts.new

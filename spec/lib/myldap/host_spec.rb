@@ -1,5 +1,3 @@
-require 'lib/myldap/host'
-
 describe "Interfacing with Host in LDAP" do
   context "network devices" do 
     it 'should be able to list all network devices on galactica' do

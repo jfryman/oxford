@@ -1,5 +1,3 @@
-require 'lib/myldap'
-
 describe 'LDAP' do
   it 'should connect to LDAP server' do
     ldap = Myldap.new
