@@ -1,11 +1,11 @@
-= Overview = 
+= Overview
 This is the first iteration of facter-ldap. 
 
 This is a wrapper for polling of facts via the Facter library (http://puppetlabs.com/puppet/related-projects/facter/) and export to LDAP
 
 This has been tested on OpenLDAP
 
-= Requirements =
+= Requirements
 * ruby
 * puppet
 * facter
@@ -17,7 +17,7 @@ This has been tested on OpenLDAP
 * Configure your LDAP settings in the configuration file (config/database.yaml)
 * run facts.rb (crontab, puppet execute, etc)
 
-= FAQ =
+= FAQ
 Q: Why did you do this instead of using <insert technology here>
 A: I like LDAP. While there are a lot of neat solutions on how to handle this problem set,
    I am aiming to reduce the overall technology footprint across places I deploy Puppet, et.
@@ -31,7 +31,7 @@ A: Facter is really good at doing one thing - providing facts.
    writing and reading facts from LDAP. This will allow alternate fact generation tools 
    (ohai, pfacter, etc) to also leverage writing of facts to LDAP. 
 
-= Todo =
+= Todo
 - Refactor code (potential integration into Facter?)
 - Include Puppet custom specific facts when polling for facts.
 - Package into gem
