@@ -12,7 +12,7 @@ This has been tested on OpenLDAP
 * activeldap
 * extended fact schema (websages.schema)
 
-= Usage =
+= Usage 
 * Setup your LDAP server to include the fact schema (inc/websages.schema). 
 * Configure your LDAP settings in the configuration file (config/database.yaml)
 * run facts.rb (crontab, puppet execute, etc)
