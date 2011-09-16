@@ -11,7 +11,6 @@ require 'lib/myldap/host'
 @facts.get_local_facts.each do |fact, value|
   f = fact.gsub(/_/, '')
   response = @host.__send__('set_fact', "fact#{f}", value)
-  #puts f if response == nil
 end
 
 # Set Processor Info
