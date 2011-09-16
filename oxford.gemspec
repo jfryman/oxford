@@ -3,8 +3,8 @@ $:.push File.expand_path("../lib", __FILE__)
 #require "facter-ldap/version"
 
 Gem::Specification.new do |s|
-  s.name        = "facter-ldap"
-  s.version     = '0.1'
+  s.name        = "oxford"
+  s.version     = '0.0.3'
   s.authors     = ["James Fryman", "Aziz Shamim"]
   s.email       = ["james@frymanet.com","azizshamim@gmail.com"]
   s.summary     = %q{}
