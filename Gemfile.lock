@@ -1,10 +1,11 @@
 PATH
   remote: .
   specs:
-    facter-ldap (0.1)
+    oxford (0.0.3)
       activeldap (>= 3.1.0)
       facter (>= 1.5.8)
       puppet (>= 2.6.4)
+      ruby-ldap (>= 0.9.11)
 
 GEM
   remote: http://rubygems.org/
@@ -40,11 +41,12 @@ GEM
     rspec-expectations (2.6.0)
       diff-lcs (~> 1.1.2)
     rspec-mocks (2.6.0)
+    ruby-ldap (0.9.11)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
-  facter-ldap!
+  oxford!
   rake (>= 0.8.7)
   rspec (~> 2.6.0)

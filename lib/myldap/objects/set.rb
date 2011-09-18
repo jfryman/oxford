@@ -1,5 +1,4 @@
 require 'lib/sc/group'
-
 module WebsagesLDAP
   class Set < ActiveLdap::Base
     ldap_mapping :classes => ['top', 'groupOfUniqueNames'], :prefix => 'ou=Sets'
