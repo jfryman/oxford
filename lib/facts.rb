@@ -1,15 +1,18 @@
 module Oxford
-  require 'facter'
-  require 'puppet'
+  class LDAPAdapter
+  end
 
   class Facts
-    def get_local_facts
+    require 'facter'
+    require 'puppet'
+
+    def self.all
       Facter.to_hash
     end
 
-    def get_network_facts
+    def self.network
       networks = Hash.new
-      facts = get_local_facts
+      facts = self.all
       facts['interfaces'].split(',').each do |interface|
         networks[interface] = {
           'interface'  => interface,
@@ -22,18 +25,40 @@ module Oxford
       networks
     end
 
-    def get_processor_facts
-      processors = Hash.new
-      facts = get_local_facts
-      facts.each do |key, value|
-        if key =~ /^processor\d{1,100}/
-          processors[key] = {
-            'processorId'   => key.gsub(/^processor+/, ''),
-            'processorInfo' => value
-          }
-        end
+    def self.processor
+      facts = self.all
+      case facts['operatingsystem']
+      when 'CentOS'
+        Facts::Linux.processor
+      when 'Darwin'
+        Facts::OSX.processor
       end
-      processors
+    end
+
+    class Linux
+      def self.processor
+        processors = Hash.new
+        Facts.all.each do |key, value|
+          if key =~ /^processor\d{1,100}/
+            processors[key] = {
+              'processorId'   => key.gsub(/^processor/, ''),
+              'processorInfo' => value
+            }
+          end
+        end
+        processors
+      end
+    end
+
+    class OSX
+      def self.processor
+        facts = Facts.all
+        {'processor0' =>
+          { 'processorId' => 0,
+            'processorInfo' => "#{facts['sp_cpu_type']} #{facts['sp_current_processor_speed']}"
+          }
+        }
+      end
     end
   end
 end

@@ -2,7 +2,7 @@ require 'active_ldap'
 require 'yaml'
 require 'lib/myldap/objects'
 
-class Myldap 
+class Myldap
   def initialize
     load_config
     setup_connection

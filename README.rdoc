@@ -1,3 +1,10 @@
+= Refactor
+* MyLdap needs to be refactored into an interface class (program to an interface)
+* Facts needs to be refactored into a Factory (Oxford::LDAP) (Oxford::Facter)
+* Host should be another factory class
+* Not sure about Object (and all the decendents)
+
+
 = Overview
 This is the first iteration of oxford, a LDAP bridge between fact generation and LDAP as storage. 
 

@@ -1,6 +1,6 @@
-describe "Facts" do
+describe Oxford::Facts do
   before(:all) do
-    @interface = Facts.new
+    @interface = Oxford::Facts.get_local
   end
   it 'should retrieve local facts via Facter' do
     facts = @interface.get_local_facts
