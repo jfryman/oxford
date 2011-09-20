@@ -17,7 +17,7 @@ describe "Interfacing with Host in LDAP" do
         'factMacAddress' => '11:11:11:11:11:11',
         'factNetwork'    => '255.255.255.0'
       }
-     
+
       host = Host.new('galactica')
       host.get_network_info('eth0').should == a
     end
