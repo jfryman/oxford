@@ -15,23 +15,23 @@ describe Oxford do
 
     context "network" do
       it 'should retrieve network facts in a parsed format' do
-        @f.network.should be_a(Hash)
-        @f.network.should_not be_empty
+        @f.networks.should be_a(Hash)
+        @f.networks.should_not be_empty
       end
 
       it 'should retrieve network facts from os x' do
-        @f.network.should include('en0')
+        @f.networks.should include('en0')
       end
     end
 
     context "processor" do
       it 'should return processor facts in a parsed format' do
-        @f.processor.should be_a(Hash)
-        @f.processor.should_not be_empty
+        @f.processors.should be_a(Hash)
+        @f.processors.should_not be_empty
       end
 
       it 'should retrieve processor facts from os x' do
-        @f.processor.should include('processor0')
+        @f.processors.should include('processor0')
       end
     end
   end
@@ -80,33 +80,33 @@ describe Oxford do
 
     context "networks" do
       it 'should be able to retrieve a list of network devices on a host in ldap' do
-        @g.network.should_not   be_nil
-        @g.network.should       be_an(Array)
-        @g.network.first.should be_an(Oxford::Network)
-        @g.network.should       have(2).items
+        @g.networks.should_not   be_nil
+        @g.networks.should       be_an(Array)
+        @g.networks.first.should be_an(Oxford::Network)
+        @g.networks.should       have(2).items
       end
 
       it 'should be able to get information about an adapter from a host in ldap' do
         pending("need to merge the arguments somehow")
-        n = @g.network(:cn => 'networkLo0')
+        n = @g.networks(:cn => 'networkLo0')
         n.should_not be_nil
         n.should     be_a(Oxford::Network)
       end
 
       it 'should be able to create a new network device' do
         r = "test_interface"
-        before = @g.network
+        before = @g.networks
         @g.add_network(r)
-        after = @g.network
+        after = @g.networks
         (after - before).should have(1).item
       end
 
       it 'should be able to delete a network device' do
-        before = @g.network
-        @g.network.each do |n|
+        before = @g.networks
+        @g.networks.each do |n|
           n.delete if n.cn == 'test_interface'
         end
-        after = @g.network
+        after = @g.networks
         (before - after).should have(1).item
       end
 
@@ -117,23 +117,23 @@ describe Oxford do
 
     context "processor" do
       it 'should be able to list all processors on a host in ldap' do
-        @g.processor.should_not be_nil
-        @g.processor.should     be_an(Array)
-        @g.processor.first.should be_an(Oxford::Processor)
+        @g.processors.should_not be_nil
+        @g.processors.should     be_an(Array)
+        @g.processors.first.should be_an(Oxford::Processor)
       end
 
       it 'should be able to write a processor entry to a host in ldap' do
         r = "processor" + (0...2).collect { rand(9) }.to_s
-        before = @g.processor
+        before = @g.processors
         @g.add_processor(r)
-        after  = @g.processor
+        after  = @g.processors
         (after - before).should have(1).item
       end
 
       it 'should be able to delete a processor device' do
-        before = @g.processor
-        @g.processor.first.delete
-        after = @g.processor
+        before = @g.processors
+        @g.processors.first.delete
+        after = @g.processors
         (before - after).should have(1).item
       end
 

@@ -4,11 +4,19 @@ module Oxford
     require 'puppet'
     attr_reader :all
 
+    def method_missing(m, *args, &block)
+      if @all.has_key?(m.to_s)
+        @all[m.to_s]
+      else
+        raise NoMethodError
+      end
+    end
+
     def initialize
       @all = Facter.to_hash
     end
 
-    def network
+    def networks
       networks = Hash.new
       @all['interfaces'].split(',').each do |interface|
         networks[interface] = {
@@ -22,17 +30,17 @@ module Oxford
       networks
     end
 
-    def processor
+    def processors
       case @all['operatingsystem']
       when 'CentOS'
-        Facts::Linux.processor(@all)
+        Facts::Linux.processors(@all)
       when 'Darwin'
-        Facts::OSX.processor(@all)
+        Facts::OSX.processors(@all)
       end
     end
 
     class Linux
-      def self.processor(facts)
+      def self.processors(facts)
         processors = Hash.new
         facts.each do |key, value|
           if key =~ /^processor\d{1,100}/
@@ -47,9 +55,9 @@ module Oxford
     end
 
     class OSX
-      def self.processor(facts)
+      def self.processors(facts)
         {'processor0' =>
-          { 'processorId' => 0,
+          { 'processorId' => "0",
             'processorInfo' => "#{facts['sp_cpu_type']} #{facts['sp_current_processor_speed']}"
           }
         }
