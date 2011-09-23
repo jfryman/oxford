@@ -90,13 +90,19 @@ describe Oxford do
         pending("need to merge the arguments somehow")
         n = @g.networks(:cn => 'networkLo0')
         n.should_not be_nil
+        p n
         n.should     be_a(Oxford::Network)
       end
 
       it 'should be able to create a new network device' do
         r = "test_interface"
+        v = { 'Interface'  => 'eth1',
+              'IpAddress'  => '192.168.2.100',
+              'MacAddress' => '22:22:22:22:22:22',
+              'Network'    => '255.255.255.0',
+        }
         before = @g.networks
-        @g.add_network(r)
+        @g.add_network(r,v)
         after = @g.networks
         (after - before).should have(1).item
       end
@@ -124,8 +130,9 @@ describe Oxford do
 
       it 'should be able to write a processor entry to a host in ldap' do
         r = "processor" + (0...2).collect { rand(9) }.to_s
+        v = { "processorId" => "0", "processorInfo" => "some test stuff" }
         before = @g.processors
-        @g.add_processor(r)
+        @g.add_processor(r,v)
         after  = @g.processors
         (after - before).should have(1).item
       end
