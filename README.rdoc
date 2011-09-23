@@ -1,33 +1,3 @@
-= Refactor
-* MyLdap needs to be refactored into an interface class (program to an interface)
-* Facts needs to be refactored into a Factory (Oxford::LDAP) (Oxford::Facter)
-* Host should be another factory class
-* Not sure about Object (and all the decendents)
-
-#<Oxford::Host objectClass:<facterHost, device, top>, 
-  must:<cn, objectClass>,
-  may:<description, factArchitecture, factDomain, factFacterVersion, factFqdn, factHardwareModel, factHardwareisa, 
-    factHostname, factId, factIsVirtual, factKernel, factKernelMajVersion, factKernelRelease, factKernelVersion, 
-    factLastUpdated, factLsbDistCodename, factLsbDistDescription, factLsbDistId, factLsbDistRelease, 
-    factLsbMajDistRelease, factLsbRelease, factMacAddress, factMemoryFree, factMemorySize, factOperatingSystem, 
-    factOperatingSystemRelease, factPath, factPhysicalProcessorCount, factProcessorCount, factPs, factPuppetVersion, 
-    factRubySiteDir, factRubyVersion, factSelinux, factSelinuxConfigMode, factSelinuxConfigPolicy, factSelinuxCurrentMode, 
-    factSelinuxEnforced, factSelinuxMode, factSelinuxPolicyVersion, factSshDsaKey, factSshRsaKey, factSwapFree, factSwapSize, 
-    factTimeZone, factUniqueId, factUptime, factUptimeDays, factUptimeHours, factUptimeSeconds, factVirtual, l, o, ou, owner, 
-    seeAlso, serialNumber>, cn: ["galactica"], commonName: ["galactica"], description: [], factArchitecture: [], factDomain: [], 
-    factFacterVersion: [], factFqdn: ["galactica.test.com"], factHardwareModel: [], factHardwareisa: [], factHostname: [], 
-    factId: [], factIsVirtual: [], factKernel: [], factKernelMajVersion: [], factKernelRelease: [], factKernelVersion: [], 
-    factLastUpdated: [], factLsbDistCodename: [], factLsbDistDescription: [], factLsbDistId: [], factLsbDistRelease: [], 
-    factLsbMajDistRelease: [], factLsbRelease: [], factMacAddress: [], factMemoryFree: [], factMemorySize: [], 
-    factOperatingSystem: ["PPwmdvzAlNB"], factOperatingSystemRelease: [], factPath: [], factPhysicalProcessorCount: [], 
-    factProcessorCount: [], factPs: [], factPuppetVersion: [], factRubySiteDir: [], factRubyVersion: [], factSelinux: [], 
-    factSelinuxConfigMode: [], factSelinuxConfigPolicy: [], factSelinuxCurrentMode: [], factSelinuxEnforced: [], factSelinuxMode: [], 
-    factSelinuxPolicyVersion: [], factSshDsaKey: [], factSshRsaKey: [], factSwapFree: [], factSwapSize: [], factTimeZone: [], 
-    factUniqueId: [], factUptime: [], factUptimeDays: [], factUptimeHours: [], factUptimeSeconds: [], factVirtual: [], l: [], 
-    localityName: [], o: [], objectClass: ["facterHost", "device", "top"], organizationName: [], organizationalUnitName: [], 
-    ou: [], owner: [], seeAlso: [], serialNumber: []
->
-
 = Overview
 This is the first iteration of oxford, a LDAP bridge between fact generation and LDAP as storage. 
 
