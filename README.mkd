@@ -32,10 +32,10 @@ A: Facter is really good at doing one thing - providing facts.
    (ohai, pfacter, etc) to also leverage writing of facts to LDAP. 
 
 = Todo
-- Refactor code (potential integration into Facter?)
-- add alternate fact generation tools as options. 
-- update namespace to include name. 
-- Include Puppet custom specific facts when polling for facts.
-- Package into gem
-- Profit?
+~~Refactor code (potential integration into Facter?)~~
+add alternate fact generation tools as options.
+~~update namespace to include name.~~
+Include Puppet custom specific facts when polling for facts.
+~~Package into gem~~
+¿Profit?
 
