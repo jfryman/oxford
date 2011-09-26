@@ -17,18 +17,11 @@ This has been tested on OpenLDAP
 
 # FAQ
 Q: Why did you do this instead of using <insert technology here>  
-A: I like LDAP. While there are a lot of neat solutions on how to handle this problem set,  
-   I am aiming to reduce the overall technology footprint across places I deploy Puppet, et.  
-   al. Less technology stacks == less things to manage overall. Plus, LDAP provides me  
-   things out of the box like disaster recovery (replication) and HA (multi-master). Win.  
-   
+A: I like LDAP. While there are a lot of neat solutions on how to handle this problem set,  I am aiming to reduce the overall technology footprint across places I deploy Puppet, et.  al. Less technology stacks == less things to manage overall. Plus, LDAP provides me  things out of the box like disaster recovery (replication) and HA (multi-master). Win.  
 Q: Why did you not extend Facter?  
 A: Facter is really good at doing one thing - providing facts.  
-   Because this requires schema that is not existent by default in LDAP, I'd isolated  
-   both functions into very simple pieces UNIX style - my code is really good at  
-   writing and reading facts from LDAP. This will allow alternate fact generation tools  
-   (ohai, pfacter, etc) to also leverage writing of facts to LDAP.  
 
+Because this requires schema that is not existent by default in LDAP, I'd isolated  both functions into very simple pieces UNIX style - my code is really good at  writing and reading facts from LDAP. This will allow alternate fact generation tools  (ohai, pfacter, etc) to also leverage writing of facts to LDAP.  
 # Todo
 ~~Refactor code (potential integration into Facter?)~~  
 add alternate fact generation tools as options.  
