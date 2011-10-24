@@ -1,0 +1,7 @@
+ldap:
+  host: localhost
+  port: 3890
+  method: :plain
+  base: dc=test,dc=com
+  user: cn=admin,dc=test,dc=com
+  pass: test
