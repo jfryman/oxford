@@ -4,7 +4,7 @@ $:.push File.expand_path("../lib", __FILE__)
 
 Gem::Specification.new do |s|
   s.name        = "oxford"
-  s.version     = '0.0.4'
+  s.version     = '0.6'
   s.authors     = ["James Fryman", "Aziz Shamim"]
   s.email       = ["james@frymanet.com","azizshamim@gmail.com"]
   s.summary     = %q{}

@@ -1,8 +1,7 @@
 #!/usr/bin/env ruby
 
 require 'rubygems'
-require 'lib/oxford.rb'
-require 'pp'
+require File.join(File.dirname(__FILE__),'/lib/oxford.rb')
 
 debug = false
 
