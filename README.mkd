@@ -12,8 +12,8 @@ This has been tested on OpenLDAP
 
 # Usage
 * Setup your LDAP server to include the fact schema (inc/websages.schema). 
-* Configure your LDAP settings in the configuration file (config/database.yaml)
-* run facts.rb (crontab, puppet execute, etc)
+* Configure your LDAP settings in the configuration file (see config/database.yaml for example)
+* run bin/oxford -c <config file> i.e. bin/oxford -c /etc/oxford.conf
 
 # FAQ
 Q: Why did you do this instead of using <insert technology here>  
