@@ -1,0 +1,18 @@
+#!/usr/bin/env ruby
+
+require 'optparse'
+require 'rubygems'
+require File.join(File.dirname(__FILE__),'/../lib/oxford.rb')
+
+options = {}
+
+$stderr = File.new("/dev/null", "w")
+optparse = OptionParser.new do |opts|
+  opts.banner = "Usage: oxford -c <config>"
+
+  opts.on('-c', '--config', 'Assign a configuration file (see sample in config/database.yaml)') do |file|
+    Oxford::Runner.config = file
+  end
+end
+
+Oxford::Runner.run!
