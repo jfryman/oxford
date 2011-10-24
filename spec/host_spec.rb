@@ -41,10 +41,9 @@ describe Oxford::Host do
     end
 
     it 'should be able to get information about an adapter from a host in ldap' do
-      pending("need to merge the arguments somehow")
-      n = @g.networks(:cn => 'networkLo0')
-      n.should_not be_nil
-      n.should     be_a(Oxford::Network)
+      n = @g.networks('lo')
+      n.should have(1).item
+      n.first.should  be_a(Oxford::Network)
     end
 
     it 'should be able to create a new network device' do

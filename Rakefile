@@ -10,7 +10,6 @@ def records
   YAML.load( template.result(namespace.send(:binding)) )
 end
 
-
 desc "Run those tests"
 task :spec do
   require 'rspec/core/rake_task'
@@ -54,3 +53,5 @@ namespace :ldap do
     end
   end
 end
+
+
