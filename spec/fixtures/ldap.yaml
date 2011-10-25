@@ -1,0 +1,158 @@
+-
+  dn:
+  - cn=<%= hostname %>,ou=Hosts,dc=test,dc=com
+  cn:
+  - <%= hostname %>
+  objectClass:
+  - top
+  - device
+  - facterHost
+  factProcessorCount:
+  - '1'
+  factRubySiteDir:
+  - '/opt/ruby/lib/ruby/site_ruby/1.8'
+  factId:
+  - root
+  factSwapSize:
+  - 1.03 GB
+  factArchitecture:
+  - i386
+  factSshDsaKey:
+  - AAAAB3NzaC1kc3MAAACBALTYvtVT480vuAMPxy6Y5T+jriZ3bvB6rPRgVwltMsI8GCcbDJ3C8QbMfQlSoSEPtJVL5kkL4RtFN/KUf8qYr8/e3fDHQ3eUvU2qWhbcU88x2vKM8rup7zIdxcNLGYCv/UJoi+zP9mOTLQwgZAClINr0gW1tmccuclclkA3bpNErAAAAFQCncrjQqIBHYbuQMEe5qy48794N5QAAAIBOPzK4VRnSBMMtvJm0qmd4b/l9Ua5feqFMFVXp9dSuI1z4Gl1JLDD5wmtDoVWQaMAgEN0mQTFXOlerVzKsSs7W8QNJZHUfogUukYY8pzQAn8Oa0GJyRRbQBvCFCyDubS79qw8KnEpZLm31BTMo4+OzqcLPydIDZM5egYHKpTSpqwAAAIEAnf+5NVAYz41OoikhgtpYyAbE3yc38pXgkw4vyW4bpMolJ+KQ8MU1P9mQoD+8zSPWr0gPefpHOoxw/hSTNU9fM6O4CAl4Y/p9HIF/86D6cTzuikhbW0dSmbEWTxs0gCbxcz3vo+KzDUBdlVwsO1uGHycsEOQknu2bECO/CM40C/4=
+  factIsVirtual:
+  - 'false'
+  factHardwareModel:
+  - i686
+  factKernelRelease:
+  - 2.6.18-238.el5
+  factKernel:
+  - Linux
+  factUniqueId:
+  - 007f0100
+  factLsbRelease:
+  - ":core-4.0-ia32:core-4.0-noarch:graphics-4.0-ia32:graphics-4.0-noarch:printing-4.0-ia32:printing-4.0-noarch"
+  factUptimeDays:
+  - '0'
+  factSelinux:
+  - 'true'
+  factLsbDistCodename:
+  - Final
+  factHostname:
+  - <%= hostname %>
+  factUptimeSeconds:
+  - '37636'
+  factFqdn:
+  - <%= hostname %>.test.com
+  factTimeZone:
+  - CDT
+  factHardwareisa:
+  - i686
+  factSelinuxConfigPolicy:
+  - targeted
+  factLastUpdated:
+  - '1317236700'
+  factSwapFree:
+  - 1.03 GB
+  factPhysicalProcessorCount:
+  - '0'
+  factKernelMajVersion:
+  - '2.6'
+  factSelinuxEnforced:
+  - 'false'
+  factOperatingSystemRelease:
+  - '5.6'
+  factDomain:
+  - test.com
+  factSelinuxConfigMode:
+  - permissive
+  factMemoryFree:
+  - 282.85 MB
+  factUptimeHours:
+  - '10'
+  factLsbMajDistRelease:
+  - '5'
+  factPath:
+  - /usr/kerberos/sbin:/usr/kerberos/bin:/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin:/opt/ruby/bin/:/usr/local/rvm/bin:/root/bin
+  factKernelVersion:
+  - 2.6.18
+  factPuppetVersion:
+  - 2.6.8
+  factOperatingSystem:
+  - CentOS
+  factSelinuxPolicyVersion:
+  - '21'
+  factMemorySize:
+  - 375.85 MB
+  factSelinuxMode:
+  - targeted
+  factSshRsaKey:
+  - AAAAB3NzaC1yc2EAAAABIwAAAQEArIQv2wN+QYh+UmMMDPQANIlve3hkq+ZGZM00mLw1A7FQnJEt286XaVDfwC8kK2vOmKh2/YTA0FdRpOSM65AmjjHef/wygKGQj5K4GMhs64VlzC+Hxu4BYBMGrxIzJuB54+yrukZDVJ/eC8Q/IlNAsx/3okeWiEtuOpflrAfJtah4HNB5n/8Do0++IiN76EOi5+qnxogBmsGKr0HLB9JARUwMjRyyur4sXE4rYRAOeANXFlsH86gkeEMizyBautjKE0m3JrN5BOPuhFxuZdKQsRqbeQXv13n8CJtw0YTz+u1MFGsWCJQID+IsLbc362NMISIG5DHS0gw92BwQIJ3Wlw==
+  factLsbDistId:
+  - CentOS
+  factPs:
+  - 'ps -ef'
+  factFacterVersion:
+  - 1.5.9
+  factMacAddress:
+  - 08:00:27:40:9A:F7
+  factVirtual:
+  - physical
+  factLsbDistRelease:
+  - '5.6'
+  factLsbDistDescription:
+  - CentOS release 5.6 (Final)
+  factUptime:
+  - 10:27 hours
+  factRubyVersion:
+  - 1.8.7
+  factSelinuxCurrentMode:
+  - permissive
+-
+  dn:
+  - cn=processor0,cn=<%= hostname %>,ou=Hosts,dc=test,dc=com
+  cn:
+  - processor0
+  objectClass:
+  - top
+  - device
+  - facterProcessor
+  factProcessorInfo:
+  - Intel(R) Core(TM) i5-2415M CPU @ 2.30GHz
+  factProcessorId:
+  - '0'
+-
+  dn: 
+  - cn=lo,cn=<%= hostname %>,ou=Hosts,dc=test,dc=com
+  cn:
+  - lo
+  objectClass:
+  - top
+  - device
+  - facterNetwork
+  factNetwork:
+  - 127.0.0.0
+  factIpAddress:
+  - 127.0.0.1
+  factInterface:
+  - lo
+  factNetmask:
+  - 255.0.0.0
+-
+  dn: 
+  - cn=eth0,cn=<%= hostname %>,ou=Hosts,dc=test,dc=com
+  cn:
+  - eth0
+  objectClass:
+  - top
+  - device
+  - facterNetwork
+  factNetwork:
+  - 10.0.2.0
+  factIpAddress:
+  - 10.0.2.15
+  factInterface:
+  - eth0
+  factMacAddress:
+  - 08:00:27:40:9A:F7
+  factNetmask:
+  - 255.255.255.0

@@ -1,0 +1,7 @@
+ldap:
+  host: localhost
+  port: 6360
+  method: :ssl
+  base: dc=test,dc=com
+  user: cn=admin,dc=test,dc=com
+  pass: test
