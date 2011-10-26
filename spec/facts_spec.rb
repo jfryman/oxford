@@ -13,8 +13,13 @@ describe Oxford::Facts do
       @f.networks.should_not be_empty
     end
 
-    it 'should retrieve network facts from os x' do
-      @f.networks.should include('en0')
+    it 'should retrieve system specific network facts' do
+      case @f.kernel
+      when 'Darwin'
+        @f.networks.should include('en0')
+      when 'Linux'
+        @f.networks.should include('eth0')
+      end
     end
   end
 
@@ -24,9 +29,8 @@ describe Oxford::Facts do
       @f.processors.should_not be_empty
     end
 
-    it 'should retrieve processor facts from os x' do
-      @f.processors.should include('processor0')
+    it 'should retrieve system specific processor facts' do
+	@f.processors.should include('processor0')
     end
   end
 end
-

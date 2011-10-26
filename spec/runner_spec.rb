@@ -23,7 +23,7 @@ describe Oxford::Runner do
   end
 
   it 'should take a config file' do
-    Oxford::Runner.config = File.join(File.dirname(__FILE__),'/fixtures/ssl.yaml')
-    lambda { Oxford::Runner.run! }.should_not raise_error
+    Oxford::Runner.config = File.join(File.dirname(__FILE__),'/fixtures/nossl.yaml')
+    Oxford::Runner.config.should == File.join(File.dirname(__FILE__),'/fixtures/nossl.yaml')
   end
 end

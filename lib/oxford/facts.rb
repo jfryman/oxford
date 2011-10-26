@@ -32,7 +32,7 @@ module Oxford
 
     def processors
       case @all['operatingsystem']
-      when 'CentOS'
+      when 'CentOS', 'RedHat'
         Facts::Linux.processors(@all)
       when 'Darwin'
         Facts::OSX.processors(@all)
