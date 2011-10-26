@@ -10,9 +10,9 @@ $stderr = File.new("/dev/null", "w")
 optparse = OptionParser.new do |opts|
   opts.banner = "Usage: oxford -c <config>"
 
-  opts.on('-c', '--config', 'Assign a configuration file (see sample in config/database.yaml)') do |file|
+  opts.on('-c', '--config CONFIGFILE', 'Load a CONFIGFILE (see sample in config/database.yaml)') do |file|
     Oxford::Runner.config = file
   end
-end
+end.parse!
 
 Oxford::Runner.run!

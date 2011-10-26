@@ -4,7 +4,7 @@ $:.push File.expand_path("../lib", __FILE__)
 
 Gem::Specification.new do |s|
   s.name        = "oxford"
-  s.version     = '0.6'
+  s.version     = '0.8'
   s.authors     = ["James Fryman", "Aziz Shamim"]
   s.email       = ["james@frymanet.com","azizshamim@gmail.com"]
   s.summary     = %q{}
@@ -16,11 +16,10 @@ Gem::Specification.new do |s|
   s.require_paths = ["lib"]
 
   # specify any dependencies here; for example:
-  s.add_dependency "puppet", '>= 2.6.4'
-  # need to check versions
   s.add_dependency "facter", ">= 1.5.8"
   s.add_dependency "activeldap", ">= 3.1.0"
-  s.add_dependency "ruby-ldap", ">= 0.9.11"
+  s.add_development_dependency "ruby-ldap", ">= 0.9.11"
   s.add_development_dependency "rspec", '~> 2.6.0'
   s.add_development_dependency "rake", '>= 0.8.7'
+  # need to check versions
 end

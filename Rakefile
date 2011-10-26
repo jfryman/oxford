@@ -1,5 +1,5 @@
-require 'bundler/gem_tasks'
 require 'erb'
+require 'bundler/gem_tasks'
 
 task :default  => [:spec]
 
@@ -10,8 +10,14 @@ def records
   YAML.load( template.result(namespace.send(:binding)) )
 end
 
+task :environment do
+  if File.exists?('/opt/puppet/bin/ruby')
+    ENV['PATH'] = "/opt/puppet/bin/ruby:#{ENV['PATH']}"
+  end
+end
+
 desc "Run those tests"
-task :spec do
+task :spec => [:environment] do
   require 'rspec/core/rake_task'
   RSpec::Core::RakeTask.new do |t|
     t.ruby_opts = ["-rrubygems"]
