@@ -4,7 +4,7 @@ describe Oxford::Host do
     Oxford::LDAPAdapter.new
     @g = Oxford::Host.find('galactica')
   end
-  
+
   context "host" do
     it 'should be able to tell me all known facts about a system' do
       @g.factFqdn.should eql('galactica.test.com')
