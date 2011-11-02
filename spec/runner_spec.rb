@@ -26,4 +26,15 @@ describe Oxford::Runner do
     Oxford::Runner.config = File.join(File.dirname(__FILE__),'/fixtures/nossl.yaml')
     Oxford::Runner.config.should == File.join(File.dirname(__FILE__),'/fixtures/nossl.yaml')
   end
+
+  it 'should update existing facts' do
+    g = Oxford::Host.find(@f.hostname)
+    g.__send__("facthardwaremodel=", "fakearch")
+    g.save!
+    g.facthardwaremodel.should eql("fakearch")
+    Oxford::Runner.run!
+    f = Oxford::Host.find(@f.hostname)
+    f.facthardwaremodel.should eql(@f.hardwaremodel)
+  end
+
 end

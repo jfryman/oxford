@@ -4,7 +4,7 @@ describe Oxford::Host do
     Oxford::LDAPAdapter.new
     @g = Oxford::Host.find('galactica')
   end
-  
+
   context "host" do
     it 'should be able to tell me all known facts about a system' do
       @g.factFqdn.should eql('galactica.test.com')
@@ -41,7 +41,7 @@ describe Oxford::Host do
     end
 
     it 'should be able to get information about an adapter from a host in ldap' do
-      n = @g.networks('lo')
+      n = @g.networks('NetworkLo0')
       n.should have(1).item
       n.first.should  be_a(Oxford::Network)
     end
