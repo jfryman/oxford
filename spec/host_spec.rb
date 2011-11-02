@@ -41,7 +41,7 @@ describe Oxford::Host do
     end
 
     it 'should be able to get information about an adapter from a host in ldap' do
-      n = @g.networks('lo')
+      n = @g.networks('NetworkLo0')
       n.should have(1).item
       n.first.should  be_a(Oxford::Network)
     end

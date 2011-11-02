@@ -1,7 +1,6 @@
 module Oxford
   class Facts
     require 'facter'
-    require 'puppet'
     attr_reader :all
 
     def method_missing(m, *args, &block)
