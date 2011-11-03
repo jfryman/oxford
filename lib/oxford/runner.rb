@@ -9,7 +9,10 @@ module Oxford
 
       # should run the fact retrievers
       @facts = Oxford::Facts.new
-      @host = Oxford::Host.new(@facts.hostname)
+      @host = Oxford::Host.find(@facts.hostname)
+      if @host.is_a?(Array)
+        @host = Oxford::Host.new(@facts.hostname)
+      end
       @host.save
 
       # Set facts provided by Facter.
