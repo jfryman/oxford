@@ -13,7 +13,7 @@ module Oxford
     end
 
     def initialize
-      Facter::Application.load_puppet
+      $LOAD_PATH << "/var/opt/lib/pe-puppet/lib"
       @all = Facter.to_hash
     end
 
