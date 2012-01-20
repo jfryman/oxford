@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    oxford (0.9)
+    oxford (1.0.1)
       activeldap (>= 3.1.0)
       facter (>= 1.5.8)
       puppet (>= 2.7.9)
