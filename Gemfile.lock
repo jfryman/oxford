@@ -4,7 +4,6 @@ PATH
     oxford (1.0.2)
       activeldap (>= 3.1.0)
       facter (= 1.5.8)
-      puppet (= 2.6.9)
 
 GEM
   remote: http://rubygems.org/
@@ -29,8 +28,6 @@ GEM
     i18n (0.6.0)
     locale (2.0.5)
     multi_json (1.0.4)
-    puppet (2.6.9)
-      facter (>= 1.5.1)
     rake (0.9.2.2)
     rspec (2.6.0)
       rspec-core (~> 2.6.0)
