@@ -1,5 +1,6 @@
 describe Oxford::Facts do
   before(:all) do
+    $:.unshift(File.join(File.dirname(__FILE__),'fixtures'))
     @f = Oxford::Facts.new
   end
 
@@ -30,7 +31,14 @@ describe Oxford::Facts do
     end
 
     it 'should retrieve system specific processor facts' do
-	@f.processors.should include('processor0')
+      @f.processors.should include('processor0')
     end
   end
+
+  context "external facts" do
+    it 'should return external facts' do
+      @f.all.should include('testfact')
+    end
+  end
+
 end

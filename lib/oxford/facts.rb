@@ -1,6 +1,7 @@
 module Oxford
   class Facts
     require 'facter'
+    require 'facter/application'
     attr_reader :all
 
     def method_missing(m, *args, &block)
@@ -12,6 +13,7 @@ module Oxford
     end
 
     def initialize
+      $LOAD_PATH << "/var/opt/lib/pe-puppet/lib"
       @all = Facter.to_hash
     end
 
