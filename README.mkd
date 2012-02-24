@@ -26,7 +26,7 @@ Because this requires schema that is not existent by default in LDAP, I'd isolat
 ~~Refactor code (potential integration into Facter?)~~  
 add alternate fact generation tools as options.  
 ~~update namespace to include name.~~  
-Include Puppet custom specific facts when polling for facts.  
-~~Package into gem~~  
-¿Profit?  
+~~Include Puppet custom specific facts when polling for facts~~
+~~Package into gem~~
+¡Profit!
 
