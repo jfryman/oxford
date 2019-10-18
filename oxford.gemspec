@@ -16,7 +16,7 @@ Gem::Specification.new do |s|
   s.require_paths = ["lib"]
 
   # specify any dependencies here; for example:
-  s.add_dependency "facter", "= 1.5.8"
+  s.add_dependency "facter", "= 2.5.6"
   s.add_dependency "activeldap", ">= 3.1.0"
   s.add_development_dependency "ruby-ldap", ">= 0.9.11"
   s.add_development_dependency "rspec", '~> 2.6.0'
